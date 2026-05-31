@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestige Living Homes – WHS Induction Form</title>
+<style>
+:root{--navy:#1a3a5c;--green:#2d7d32;--border:#d1d9e0;--bg:#f0f4f8;--text:#2d3748;--muted:#718096;--red:#c53030}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
+
+header{background:#fff;padding:24px 20px 0;text-align:center;border-bottom:4px solid var(--navy)}
+.logo-prestige{font-family:Georgia,'Times New Roman',serif;font-size:2.6rem;font-weight:700;letter-spacing:8px;color:#1a1a1a;line-height:1}
+.logo-living{display:flex;align-items:center;justify-content:center;gap:10px;margin:5px 0 20px}
+.logo-living-text{font-family:Georgia,'Times New Roman',serif;font-size:.72rem;letter-spacing:6px;color:#b8924a;font-weight:400}
+.logo-living-line{height:1px;width:40px;background:#b8924a}
+.header-title{background:var(--navy);color:#fff;padding:12px 20px;margin:0 -20px}
+header h1{font-size:1rem;font-weight:600}
+header p{font-size:.8rem;opacity:.75;margin-top:2px}
+
+.container{max-width:680px;margin:28px auto;padding:0 16px 50px}
+
+.notice{background:#fffbeb;border-left:4px solid #c9a227;padding:13px 17px;border-radius:5px;margin-bottom:22px;font-size:.85rem;color:#5a4000}
+
+.card{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);margin-bottom:20px;overflow:hidden}
+.card-header{background:var(--navy);color:#fff;padding:12px 20px;font-size:.93rem;font-weight:700;letter-spacing:.4px}
+.card-body{padding:22px}
+
+.field{margin-bottom:14px}
+label.lbl{display:block;font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:5px}
+.req{color:var(--red)}
+input[type=text],input[type=email],input[type=date],input[type=tel]{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:.93rem;color:var(--text);transition:border .15s}
+input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,58,92,.1)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.row2{grid-template-columns:1fr}}
+
+.chk{display:flex;align-items:flex-start;gap:13px;padding:11px 13px;border:1.5px solid var(--border);border-radius:7px;margin-bottom:8px;cursor:pointer;transition:background .12s,border-color .12s}
+.chk:hover{background:#f5f8fc;border-color:#a0aec0}
+.chk.ticked{background:#f0f7f0;border-color:var(--green)}
+.chk input[type=checkbox]{width:18px;height:18px;margin-top:2px;cursor:pointer;accent-color:var(--navy);flex-shrink:0}
+.chk-text{font-size:.88rem;line-height:1.45;cursor:pointer}
+.sub{padding-left:18px}
+.sub .chk{background:#fafbfc}
+.hint{font-size:.8rem;color:var(--muted);margin:12px 0 6px;font-weight:600}
+
+.radio-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:5px}
+.radio-row label{display:flex;align-items:center;gap:7px;font-size:.9rem;cursor:pointer}
+.radio-row input[type=radio]{width:16px;height:16px;accent-color:var(--navy);cursor:pointer}
+
+.divider{height:1px;background:var(--border);margin:16px 0}
+
+#sigCanvas{border:1.5px solid var(--border);border-radius:7px;display:block;width:100%;cursor:crosshair;touch-action:none;background:#fafcff}
+.sig-bar{display:flex;align-items:center;gap:10px;margin-top:7px}
+.btn-clear{background:#e9ecef;color:#555;border:none;padding:6px 14px;border-radius:5px;font-size:.78rem;font-weight:700;cursor:pointer}
+.sig-note{font-size:.76rem;color:var(--muted);margin-left:auto}
+
+.btn-submit{width:100%;background:var(--navy);color:#fff;border:none;padding:14px;font-size:1rem;font-weight:700;border-radius:8px;cursor:pointer;letter-spacing:.4px;box-shadow:0 4px 12px rgba(26,58,92,.25);transition:opacity .2s}
+.btn-submit:hover{opacity:.88}
+.submit-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:9px}
+
+/* Confirmation */
+#confirmScreen{display:none;background:#fff;border-radius:10px;padding:28px;box-shadow:0 2px 10px rgba(0,0,0,.08);margin-bottom:22px}
+.confirm-header{text-align:center;margin-bottom:22px}
+.confirm-icon{font-size:2.8rem}
+.confirm-header h2{color:var(--navy);font-size:1.3rem;margin:7px 0 4px}
+.confirm-header p{color:var(--muted);font-size:.88rem}
+.confirm-section{font-size:.9rem;font-weight:800;color:var(--navy);margin:16px 0 8px;padding-bottom:5px;border-bottom:2px solid var(--border)}
+table.ctable{width:100%;border-collapse:collapse;font-size:.87rem;margin-bottom:8px}
+table.ctable td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+table.ctable tr:last-child td{border-bottom:none}
+table.ctable td:first-child{font-weight:600;color:var(--navy);width:60%}
+.tick{color:var(--green);font-weight:700}
+.cross{color:var(--red)}
+.sig-img{border:1px solid var(--border);border-radius:5px;max-width:320px;margin:8px 0}
+.confirm-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.btn-print{flex:1;background:var(--navy);color:#fff;border:none;padding:11px 20px;border-radius:7px;font-size:.9rem;font-weight:700;cursor:pointer}
+.btn-email{flex:1;background:var(--green);color:#fff;border:none;padding:11px 20px;border-radius:7px;font-size:.9rem;font-weight:700;cursor:pointer}
+.btn-back{background:#e9ecef;color:#333;border:none;padding:11px 20px;border-radius:7px;font-size:.9rem;font-weight:700;cursor:pointer}
+
+@media print{
+  header,#formView,.notice{display:none!important}
+  #confirmScreen{display:block!important;box-shadow:none;padding:0}
+  .confirm-actions,.btn-back{display:none!important}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-prestige">PRESTIGE</div>
+  <div class="logo-living">
+    <div class="logo-living-line"></div>
+    <div class="logo-living-text">LIVING HOMES</div>
+    <div class="logo-living-line"></div>
+  </div>
+  <div class="header-title">
+    <h1>WHS Induction Form</h1>
+    <p>For Contractors Working on Prestige Living Homes Construction Sites</p>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- CONFIRMATION SCREEN -->
+<div id="confirmScreen">
+  <div class="confirm-header">
+    <div class="confirm-icon">✅</div>
+    <h2>Form Complete</h2>
+    <p>Review your details, then print/save as PDF or send by email.</p>
+  </div>
+  <div id="confirmContent"></div>
+  <div class="confirm-actions">
+    <button class="btn-print" onclick="window.print()">🖨 Print / Save as PDF</button>
+    <button class="btn-email" onclick="sendEmail()">✉ Send by Email</button>
+    <button class="btn-back" onclick="goBack()">← Edit</button>
+  </div>
+</div>
+
+<!-- FORM -->
+<div id="formView">
+
+<div class="notice">
+  ⚠️ Please complete this form prior to commencing work on any Prestige Living Homes site. Questions? Call <strong>0432 507 244</strong>.
+</div>
+
+<form id="whsForm" novalidate>
+
+<!-- INDUCTION LETTER -->
+<div class="card">
+  <div class="card-header">Induction Letter</div>
+  <div class="card-body">
+
+    <div class="row2">
+      <div class="field">
+        <label class="lbl" for="f_biz">Contractor's Business Name <span class="req">*</span></label>
+        <input type="text" id="f_biz" placeholder="Your business name" required>
+      </div>
+      <div class="field">
+        <label class="lbl" for="f_name">Your Full Name <span class="req">*</span></label>
+        <input type="text" id="f_name" placeholder="Print clearly" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="lbl" for="f_email">Email Address <span class="req">*</span></label>
+      <input type="email" id="f_email" placeholder="your@email.com" required>
+    </div>
+
+    <div class="divider"></div>
+    <p style="font-size:.87rem;margin-bottom:10px">Please tick (✓) each item to acknowledge:</p>
+
+    <div class="chk" onclick="toggleChk(this)">
+      <input type="checkbox" id="c1" required>
+      <span class="chk-text">I have read and understand the Prestige Living Homes WHS Management Plan in its entirety and agree to comply with all conditions, site rules and requirements as stated therein when on site. <span class="req">*</span></span>
+    </div>
+
+    <div class="chk" onclick="toggleChk(this)">
+      <input type="checkbox" id="c2" required>
+      <span class="chk-text">I verify that all workers / PCBUs engaged by me who will be performing work on Prestige Living Homes NSW sites have successfully completed the relevant General Construction Induction and have the relevant records. <span class="req">*</span></span>
+    </div>
+
+    <p class="hint">I confirm I hold a copy of:</p>
+    <div class="sub">
+      <div class="chk" onclick="toggleChk(this)">
+        <input type="checkbox" id="c3">
+        <span class="chk-text">Licences for prescribed occupations</span>
+      </div>
+      <div class="chk" onclick="toggleChk(this)">
+        <input type="checkbox" id="c4">
+        <span class="chk-text">Certificates of currency for insurances — Public Liability, Work Cover, and Personal Sickness &amp; Accident Insurance</span>
+      </div>
+      <div class="chk" onclick="toggleChk(this)">
+        <input type="checkbox" id="c5">
+        <span class="chk-text">Safe Work Method Statements (SWMS) for any High-Risk Construction Work I / my workers will be undertaking</span>
+      </div>
+      <div class="chk" onclick="toggleChk(this)">
+        <input type="checkbox" id="c6">
+        <span class="chk-text">Hazardous Chemicals Register together with all relevant SDS's</span>
+      </div>
+      <div class="chk" onclick="toggleChk(this)">
+        <input type="checkbox" id="c7">
+        <span class="chk-text">Records providing evidence of testing and tagging</span>
+      </div>
+    </div>
+
+    <div class="chk" onclick="toggleChk(this)" style="margin-top:10px">
+      <input type="checkbox" id="c8" required>
+      <span class="chk-text">I confirm that a first aid kit satisfying the relevant requirements will be provided on site. <span class="req">*</span></span>
+    </div>
+
+    <div class="chk" onclick="toggleChk(this)">
+      <input type="checkbox" id="c9" required>
+      <span class="chk-text">I acknowledge that I will be responsible for payment of any fines or costs incurred because of failing to comply with my safety obligations. <span class="req">*</span></span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="field">
+      <label class="lbl">Have you contacted Prestige Living Homes or HIA Safety Services to clarify any information in the WHS Management Plan? <span class="req">*</span></label>
+      <div class="radio-row">
+        <label><input type="radio" name="contacted" value="Yes, I have" required> Yes, I have</label>
+        <label><input type="radio" name="contacted" value="No, I have not"> No, I have not</label>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SIGNATURE -->
+<div class="card">
+  <div class="card-header">Signature &amp; Date</div>
+  <div class="card-body">
+
+    <div class="field">
+      <label class="lbl">Signature <span class="req">*</span></label>
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:7px">Sign in the box using your mouse, finger, or stylus:</p>
+      <canvas id="sigCanvas" height="130"></canvas>
+      <div class="sig-bar">
+        <button type="button" class="btn-clear" onclick="clearSig()">✕ Clear</button>
+        <span class="sig-note">By signing you confirm all details are accurate.</span>
+      </div>
+    </div>
+
+    <div class="field" style="max-width:220px;margin-top:14px">
+      <label class="lbl" for="f_date">Date <span class="req">*</span></label>
+      <input type="date" id="f_date" required>
+    </div>
+
+    <div class="divider"></div>
+    <p style="font-size:.86rem;color:var(--navy);background:#eef4fb;border-left:4px solid var(--navy);padding:11px 14px;border-radius:5px;margin-bottom:14px">Upon submission, we will send a copy of the Prestige Living Homes WHS Management Plan to your email address.</p>
+    <button type="button" class="btn-submit" onclick="handleSubmit()">Review &amp; Submit →</button>
+    <p class="submit-note">Your form will be prepared for printing or emailing to Prestige Living Homes.</p>
+
+  </div>
+</div>
+
+</form>
+</div><!-- /formView -->
+</div><!-- /container -->
+
+<script>
+// ── SIGNATURE ──
+const canvas = document.getElementById('sigCanvas');
+const ctx = canvas.getContext('2d');
+let drawing = false, lx = 0, ly = 0, hasSig = false;
+
+function resizeSig() {
+  const w = canvas.parentElement.clientWidth - 4;
+  const dpr = window.devicePixelRatio || 1;
+  canvas.style.width = w + 'px'; canvas.style.height = '130px';
+  canvas.width = w * dpr; canvas.height = 130 * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.strokeStyle = '#1a3a5c'; ctx.lineWidth = 2.2; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+}
+window.addEventListener('resize', resizeSig); resizeSig();
+
+function getXY(e) {
+  const r = canvas.getBoundingClientRect();
+  if (e.touches) return { x: e.touches[0].clientX - r.left, y: e.touches[0].clientY - r.top };
+  return { x: e.clientX - r.left, y: e.clientY - r.top };
+}
+canvas.addEventListener('mousedown', e => { drawing=true; const p=getXY(e); lx=p.x; ly=p.y; });
+canvas.addEventListener('mousemove', e => { if(!drawing) return; const p=getXY(e); ctx.beginPath(); ctx.moveTo(lx,ly); ctx.lineTo(p.x,p.y); ctx.stroke(); lx=p.x; ly=p.y; hasSig=true; });
+canvas.addEventListener('mouseup', () => drawing=false);
+canvas.addEventListener('mouseleave', () => drawing=false);
+canvas.addEventListener('touchstart', e => { e.preventDefault(); drawing=true; const p=getXY(e); lx=p.x; ly=p.y; }, {passive:false});
+canvas.addEventListener('touchmove', e => { e.preventDefault(); if(!drawing) return; const p=getXY(e); ctx.beginPath(); ctx.moveTo(lx,ly); ctx.lineTo(p.x,p.y); ctx.stroke(); lx=p.x; ly=p.y; hasSig=true; }, {passive:false});
+canvas.addEventListener('touchend', () => drawing=false);
+function clearSig() { ctx.clearRect(0,0,canvas.width,canvas.height); hasSig=false; }
+
+// ── CHECKBOXES ──
+function toggleChk(wrap) {
+  const cb = wrap.querySelector('input[type=checkbox]');
+  cb.checked = !cb.checked;
+  wrap.classList.toggle('ticked', cb.checked);
+}
+
+// ── TODAY ──
+document.getElementById('f_date').valueAsDate = new Date();
+
+// ── HELPERS ──
+function v(id) { return (document.getElementById(id)?.value || '').trim() || '—'; }
+function chk(id) { return document.getElementById(id).checked ? '<span class="tick">✔ Yes</span>' : '<span class="cross">✘ No</span>'; }
+function fmtDate(id) {
+  const val = document.getElementById(id)?.value;
+  if (!val) return '—';
+  return new Date(val + 'T00:00:00').toLocaleDateString('en-AU', {day:'2-digit',month:'long',year:'numeric'});
+}
+
+// ── VALIDATE ──
+function validate() {
+  if (!v('f_biz') || v('f_biz')==='—') { alert('Please enter your Business Name.'); document.getElementById('f_biz').focus(); return false; }
+  if (!v('f_name') || v('f_name')==='—') { alert('Please enter your Full Name.'); document.getElementById('f_name').focus(); return false; }
+  const emailVal = (document.getElementById('f_email')?.value || '').trim();
+  if (!emailVal) { alert('Please enter your Email Address.'); document.getElementById('f_email').focus(); return false; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) { alert('Please enter a valid email address.'); document.getElementById('f_email').focus(); return false; }
+  for (const id of ['c1','c2','c8','c9']) {
+    if (!document.getElementById(id).checked) {
+      alert('Please tick all required acknowledgements (marked *).');
+      document.getElementById(id).scrollIntoView({behavior:'smooth',block:'center'});
+      return false;
+    }
+  }
+  if (!document.querySelector('input[name="contacted"]:checked')) {
+    alert('Please indicate whether you have contacted Prestige Living Homes.');
+    return false;
+  }
+  if (!hasSig) { alert('Please add your signature before submitting.'); canvas.scrollIntoView({behavior:'smooth',block:'center'}); return false; }
+  if (!v('f_date') || v('f_date')==='—') { alert('Please enter the date.'); document.getElementById('f_date').focus(); return false; }
+  return true;
+}
+
+// ── BUILD CONFIRM ──
+function buildConfirm() {
+  const contacted = document.querySelector('input[name="contacted"]:checked')?.value || '—';
+  const today = new Date().toLocaleDateString('en-AU',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+  return `
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:14px">Submitted: ${today}</p>
+    <div class="confirm-section">Contractor Details</div>
+    <table class="ctable">
+      <tr><td>Business Name</td><td>${v('f_biz')}</td></tr>
+      <tr><td>Full Name</td><td>${v('f_name')}</td></tr>
+      <tr><td>Email Address</td><td>${v('f_email')}</td></tr>
+    </table>
+    <div class="confirm-section">Acknowledgements</div>
+    <table class="ctable">
+      <tr><td>Read &amp; understood WHS Management Plan</td><td>${chk('c1')}</td></tr>
+      <tr><td>Workers have General Construction Induction</td><td>${chk('c2')}</td></tr>
+      <tr><td>Holds licences for prescribed occupations</td><td>${chk('c3')}</td></tr>
+      <tr><td>Holds certificates of currency (insurance)</td><td>${chk('c4')}</td></tr>
+      <tr><td>Has SWMS for High-Risk Construction Work</td><td>${chk('c5')}</td></tr>
+      <tr><td>Has Hazardous Chemicals Register &amp; SDS's</td><td>${chk('c6')}</td></tr>
+      <tr><td>Has test &amp; tag records</td><td>${chk('c7')}</td></tr>
+      <tr><td>First aid kit confirmed on site</td><td>${chk('c8')}</td></tr>
+      <tr><td>Acknowledged fines responsibility</td><td>${chk('c9')}</td></tr>
+      <tr><td>Contacted Prestige Living Homes / HIA</td><td>${contacted}</td></tr>
+    </table>
+    <div class="confirm-section">Signature</div>
+    <p style="font-size:.86rem;margin-bottom:7px"><strong>Signed by:</strong> ${v('f_name')} &nbsp;|&nbsp; <strong>Date:</strong> ${fmtDate('f_date')}</p>
+    <img src="${canvas.toDataURL('image/png')}" class="sig-img" alt="Signature">
+  `;
+}
+
+// ── SUBMIT ──
+function handleSubmit() {
+  if (!validate()) return;
+  document.getElementById('confirmContent').innerHTML = buildConfirm();
+  document.getElementById('formView').style.display = 'none';
+  document.getElementById('confirmScreen').style.display = 'block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── EMAIL ──
+function sendEmail() {
+  const biz = v('f_biz');
+  const contacted = document.querySelector('input[name="contacted"]:checked')?.value || '—';
+  const body = encodeURIComponent(
+`WHS INDUCTION FORM — PRESTIGE LIVING HOMES
+Submitted: ${new Date().toLocaleDateString('en-AU')}
+
+Business Name: ${biz}
+Contact Name: ${v('f_name')}
+Email Address: ${v('f_email')}
+Date: ${fmtDate('f_date')}
+
+ACKNOWLEDGEMENTS
+Read & understood WHS Plan: ${document.getElementById('c1').checked?'Yes':'No'}
+Workers have General Construction Induction: ${document.getElementById('c2').checked?'Yes':'No'}
+Holds licences for prescribed occupations: ${document.getElementById('c3').checked?'Yes':'No'}
+Holds certificates of currency (insurance): ${document.getElementById('c4').checked?'Yes':'No'}
+Has SWMS for High-Risk Construction Work: ${document.getElementById('c5').checked?'Yes':'No'}
+Has Hazardous Chemicals Register & SDS's: ${document.getElementById('c6').checked?'Yes':'No'}
+Has test & tag records: ${document.getElementById('c7').checked?'Yes':'No'}
+First aid kit confirmed on site: ${document.getElementById('c8').checked?'Yes':'No'}
+Acknowledged fines responsibility: ${document.getElementById('c9').checked?'Yes':'No'}
+Contacted Prestige Living Homes / HIA: ${contacted}
+
+NOTE: Please attach the printed/saved PDF of this signed form.`);
+  window.location.href = `mailto:info@prestigelivinghomes.com.au?subject=WHS%20Induction%20Form%20%E2%80%94%20${encodeURIComponent(biz)}&body=${body}`;
+}
+
+function goBack() {
+  document.getElementById('confirmScreen').style.display = 'none';
+  document.getElementById('formView').style.display = 'block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
