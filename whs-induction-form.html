@@ -19,7 +19,6 @@ header h1{font-size:1rem;font-weight:600}
 header p{font-size:.8rem;opacity:.75;margin-top:2px}
 
 .container{max-width:680px;margin:28px auto;padding:0 16px 50px}
-
 .notice{background:#fffbeb;border-left:4px solid #c9a227;padding:13px 17px;border-radius:5px;margin-bottom:22px;font-size:.85rem;color:#5a4000}
 
 .card{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);margin-bottom:20px;overflow:hidden}
@@ -55,13 +54,10 @@ input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,5
 .sig-note{font-size:.76rem;color:var(--muted);margin-left:auto}
 
 .whs-notice{font-size:.86rem;color:var(--navy);background:#eef4fb;border-left:4px solid var(--navy);padding:11px 14px;border-radius:5px;margin-bottom:14px}
-
 .btn-submit{width:100%;background:var(--navy);color:#fff;border:none;padding:14px;font-size:1rem;font-weight:700;border-radius:8px;cursor:pointer;letter-spacing:.4px;box-shadow:0 4px 12px rgba(26,58,92,.25);transition:opacity .2s}
 .btn-submit:hover{opacity:.88}
-.btn-submit:disabled{opacity:.6;cursor:not-allowed}
 .submit-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:9px}
 
-/* Confirmation */
 #confirmScreen{display:none;background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:28px;margin-bottom:20px}
 .confirm-header{text-align:center;margin-bottom:20px}
 .confirm-icon{font-size:2.5rem;margin-bottom:8px}
@@ -78,7 +74,6 @@ input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,5
 .btn-print{background:#e9ecef;color:#333;border:none;padding:11px 20px;border-radius:7px;font-size:.88rem;font-weight:700;cursor:pointer;flex:1}
 .btn-back{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:11px 20px;border-radius:7px;font-size:.88rem;font-weight:700;cursor:pointer;flex:1}
 
-/* Sending overlay */
 .sending-banner{display:none;background:#eef4fb;border:1.5px solid var(--navy);border-radius:7px;padding:12px 16px;margin-bottom:16px;font-size:.87rem;color:var(--navy);text-align:center;font-weight:600}
 .sent-banner{display:none;background:#f0f7f0;border:1.5px solid var(--green);border-radius:7px;padding:12px 16px;margin-bottom:16px;font-size:.87rem;color:var(--green);text-align:center;font-weight:600}
 .error-banner{display:none;background:#fff5f5;border:1.5px solid var(--red);border-radius:7px;padding:12px 16px;margin-bottom:16px;font-size:.87rem;color:var(--red);text-align:center;font-weight:600}
@@ -112,7 +107,7 @@ input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,5
 <div id="confirmScreen">
   <div class="sending-banner" id="sendingBanner">⏳ Sending your form to Prestige Living Homes...</div>
   <div class="sent-banner" id="sentBanner">✅ Form successfully sent to Prestige Living Homes.</div>
-  <div class="error-banner" id="errorBanner">⚠️ Could not send automatically — please use the print/PDF option below as a backup.</div>
+  <div class="error-banner" id="errorBanner">⚠️ Could not send automatically — please use the Print / Save as PDF option below as a backup.</div>
   <div class="confirm-header">
     <div class="confirm-icon">✅</div>
     <h2>Form Complete</h2>
@@ -127,14 +122,12 @@ input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,5
 
 <!-- FORM -->
 <div id="formView">
-
 <div class="notice">
   ⚠️ Please complete this form prior to commencing work on any Prestige Living Homes site. Questions? Call <strong>0432 507 244</strong>.
 </div>
 
 <form id="whsForm" novalidate>
 
-<!-- INDUCTION LETTER -->
 <div class="card">
   <div class="card-header">Induction Letter</div>
   <div class="card-body">
@@ -159,12 +152,12 @@ input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,5
     <p style="font-size:.87rem;margin-bottom:10px">Please tick (✓) each item to acknowledge:</p>
 
     <div class="chk" onclick="toggleChk(this)">
-      <input type="checkbox" id="c1" required>
+      <input type="checkbox" id="c1">
       <span class="chk-text">I have read and understand the Prestige Living Homes WHS Management Plan in its entirety and agree to comply with all conditions, site rules and requirements as stated therein when on site. <span class="req">*</span></span>
     </div>
 
     <div class="chk" onclick="toggleChk(this)">
-      <input type="checkbox" id="c2" required>
+      <input type="checkbox" id="c2">
       <span class="chk-text">I verify that all workers / PCBUs engaged by me who will be performing work on Prestige Living Homes NSW sites have successfully completed the relevant General Construction Induction and have the relevant records. <span class="req">*</span></span>
     </div>
 
@@ -193,12 +186,12 @@ input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,5
     </div>
 
     <div class="chk" onclick="toggleChk(this)">
-      <input type="checkbox" id="c8" required>
+      <input type="checkbox" id="c8">
       <span class="chk-text">I confirm that a first aid kit is available on site at all times. <span class="req">*</span></span>
     </div>
 
     <div class="chk" onclick="toggleChk(this)">
-      <input type="checkbox" id="c9" required>
+      <input type="checkbox" id="c9">
       <span class="chk-text">I acknowledge that fines and penalties issued by SafeWork NSW or any other regulatory body as a result of non-compliance by myself or my workers will be my responsibility. <span class="req">*</span></span>
     </div>
 
@@ -207,7 +200,7 @@ input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,5
     <div class="field">
       <label class="lbl">Have you contacted Prestige Living Homes or HIA Safety Services to clarify any information in the WHS Management Plan? <span class="req">*</span></label>
       <div class="radio-row">
-        <label><input type="radio" name="contacted" value="Yes, I have" required> Yes, I have</label>
+        <label><input type="radio" name="contacted" value="Yes, I have"> Yes, I have</label>
         <label><input type="radio" name="contacted" value="No, I have not"> No, I have not</label>
       </div>
     </div>
@@ -215,7 +208,6 @@ input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,5
   </div>
 </div>
 
-<!-- SIGNATURE -->
 <div class="card">
   <div class="card-header">Signature &amp; Date</div>
   <div class="card-body">
@@ -237,7 +229,7 @@ input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,5
 
     <div class="divider"></div>
     <p class="whs-notice">Upon submission, we will send a copy of the Prestige Living Homes WHS Management Plan to your email address.</p>
-    <button type="button" class="btn-submit" id="submitBtn" onclick="handleSubmit()">Review &amp; Submit →</button>
+    <button type="button" class="btn-submit" onclick="handleSubmit()">Review &amp; Submit →</button>
     <p class="submit-note">Your completed form will be automatically sent to Prestige Living Homes.</p>
 
   </div>
@@ -351,18 +343,17 @@ function buildConfirm() {
   `;
 }
 
-// ── AUTO-SEND via FormSubmit ──
+// ── AUTO-SEND via Web3Forms ──
 async function autoSend() {
   const contacted = document.querySelector('input[name="contacted"]:checked')?.value || '—';
   const payload = {
-    _subject: `WHS Induction Form — ${v('f_biz')} (${v('f_name')})`,
-    _template: 'table',
-    _captcha: 'false',
+    access_key: 'ed6ff839-60d7-4a16-bf5d-b8575e8fb30d',
+    subject: `WHS Induction Form — ${v('f_biz')} (${v('f_name')})`,
+    from_name: 'Prestige Living Homes WHS Form',
     'Business Name': v('f_biz'),
     'Full Name': v('f_name'),
-    'Email Address': v('f_email'),
+    'Contractor Email': v('f_email'),
     'Date': fmtDate('f_date'),
-    '--- ACKNOWLEDGEMENTS ---': '---',
     'Read & understood WHS Plan': chk('c1'),
     'Workers have General Construction Induction': chk('c2'),
     'Holds licences for prescribed occupations': chk('c3'),
@@ -372,29 +363,27 @@ async function autoSend() {
     'Has test & tag records': chk('c7'),
     'First aid kit confirmed on site': chk('c8'),
     'Acknowledged fines responsibility': chk('c9'),
-    'Contacted Prestige Living Homes / HIA': contacted
+    'Contacted PLH / HIA': contacted
   };
 
-  const response = await fetch('https://formsubmit.co/ajax/info@prestigelivinghomes.com.au', {
+  const response = await fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify(payload)
   });
   const result = await response.json();
-  if (!result.success && result.success !== 'true' && result.success !== true) throw new Error('FormSubmit error');
+  if (!result.success) throw new Error(result.message || 'Web3Forms error');
 }
 
 // ── SUBMIT ──
 async function handleSubmit() {
   if (!validate()) return;
 
-  // Show confirmation screen
   document.getElementById('confirmContent').innerHTML = buildConfirm();
   document.getElementById('formView').style.display = 'none';
   document.getElementById('confirmScreen').style.display = 'block';
   window.scrollTo({top:0,behavior:'smooth'});
 
-  // Auto-send in background
   const sending = document.getElementById('sendingBanner');
   const sent = document.getElementById('sentBanner');
   const error = document.getElementById('errorBanner');
